@@ -42,8 +42,6 @@ export default function App() {
     checkOnboarding();
   }, []);
 
-  //TODO: Change TabLayout to the one with the bottom navigation
-
   return (
     <View style={styles.container}>
       

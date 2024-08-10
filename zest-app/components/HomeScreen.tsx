@@ -13,6 +13,13 @@ export const HomeScreen = () => {
         }
     }
     
+    //TODO: fix the styles to fit light / dark theme
+    //TODO: Add the text for the onboarding flow
+    //TODO: Database connection
+    //TODO: Spanish and english translations
+    //TODO: Types and linter 
+
+
     return (
         <View style={styles.container}>
             <TouchableOpacity onPress={clearOnboarding}>
@@ -23,7 +30,7 @@ export const HomeScreen = () => {
                         backgroundColor: '#cccc',
                         padding: 10,
                     }
-                }>Home Screen</Text>
+                }>Onboarding</Text>
             </TouchableOpacity>
         </View>
     )

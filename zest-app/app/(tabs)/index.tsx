@@ -3,7 +3,6 @@ import {Text, View} from '@/components/Expo-Components/Themed';
 import { HomeScreen } from '@/components/HomeScreen';
 
 export default function TabOneScreen() {
-    console.log('TabOneScreen');
   return HomeScreen();
 }
 

@@ -15,7 +15,6 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
-console.log('TabLayout');
   return (
     <Tabs
       screenOptions={{
@@ -27,8 +26,8 @@ console.log('TabLayout');
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          //headerShown: useClientOnlyValue(false, false),
+          title: 'Home',
+          headerShown: useClientOnlyValue(false, false),
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Link replace href="/modal" asChild>
@@ -49,7 +48,14 @@ console.log('TabLayout');
       <Tabs.Screen
         name="two"
         options={{
-          title: 'Tab Two',
+          title: 'Reminder',
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="three"
+        options={{
+          title: 'Profile',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />

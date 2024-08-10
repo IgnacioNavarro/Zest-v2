@@ -42,9 +42,7 @@ export default function RootLayout() {
         return null;
       }
 
-      
-      //return welcome screen if the user has not seen the one time screen or the tabs screen if they have
-      return <RootLayoutNav />;
+    return <RootLayoutNav />;
 }
 
 function RootLayoutNav() {
