@@ -1,5 +1,7 @@
 import React from "react"
-import { View, Text, StyleSheet, useWindowDimensions, Animated } from "react-native"
+import { StyleSheet, useWindowDimensions, Animated } from "react-native"
+import { View, Text } from "@/components/Expo-Components/Themed"
+import { styles } from "@/constants/Styles"
 
 export const Paginator = ({data, scrollX}:any) => {
     
@@ -35,23 +37,3 @@ export const Paginator = ({data, scrollX}:any) => {
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    paginator: {
-        flexDirection: 'row',
-        height: 64,
-    },
-    dot: {
-        height: 10,
-        borderRadius: 5,
-        //backgroundColor: '#fafa04',
-        backgroundColor: '#202020',
-        marginHorizontal: 8,
-    },
-})

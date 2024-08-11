@@ -7,7 +7,7 @@ import { Onboarding } from 'components/Onboarding/Onboarding';
 import TabLayout from './(tabs)/_layout';
 import { Link, Navigator, router, Stack } from 'expo-router';
 import RootLayout from './_layout';
-
+import { styles } from 'constants/Styles';
 
 const Loading = () => {
   return (
@@ -25,7 +25,6 @@ export default function App() {
   
   const checkOnboarding = async () => {
     try {
-      console.log('index.tsx');
       const value = await AsyncStorage.getItem('@viewedOnboarding');
       if (value !== null) {
         setViewedOnboarding(true);
@@ -53,12 +52,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#202020', // create constant for dark mode and light mode
-    color: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

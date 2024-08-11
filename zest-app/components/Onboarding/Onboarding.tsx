@@ -1,10 +1,12 @@
 import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { View, Text, StyleSheet, FlatList, Animated, TouchableOpacity } from "react-native";
+import { StyleSheet, FlatList, Animated, TouchableOpacity, Appearance } from "react-native";
+import {Text, View} from '@/components/Expo-Components/Themed';
 import { slides } from "assets/utils/slides";
 import { OnboardingItem } from "./OnboardingItem";
 import { Paginator } from "./Paginator";
 import { router } from "expo-router";
+import { styles } from "@/constants/Styles";
 
 export const Onboarding = () => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
@@ -21,7 +23,6 @@ export const Onboarding = () => {
 
     const scrollTo = async () => {
             try{
-                console.log('clicked to true');
                 await AsyncStorage.setItem('@viewedOnboarding', 'true');
                 router.replace('/');
             } catch (error) {
@@ -67,27 +68,8 @@ export const StartButton = ({scrollTo}:any) => {
     return (
         <TouchableOpacity onPress={scrollTo}
         style={styles.button}>
-            <Text style={
-                { color: '#fafa04', fontSize: 18, fontWeight: 'bold' }
-            }>Zest Up!</Text>
+            <Text style={styles.startButtonText}
+            >Zest Up!</Text>
         </TouchableOpacity>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        color: '#202020',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    button: {
-        position: 'absolute',
-        backgroundColor: '#303030',
-        borderRadius: 20,
-        color: '#fafa04',
-        bottom: 100,
-        padding: 20
-    },
-});
