@@ -14,7 +14,7 @@ export const OnboardingItem =  ({item}:any) => {
         <View style={[styles.container, { width }]}>
             <Image source={item.img} style={[styles.imageOnBoarding, { width, resizeMode: "contain" }]} />
             
-            <View style={{ flex: 0.3 }}>
+            <View style={{ flex: 0.4 }}>
                 <Text style={styles.titleOnBoarding}>{t(`Onboarding.slides.${item.id}.title`)}</Text>
                 <Text style={styles.descriptionOnBoarding}>{t(`Onboarding.slides.${item.id}.description`)}</Text>
             </View>

@@ -1,13 +1,32 @@
 {
     "Onboarding": {
-        "title": "Bienvenido a Zest",
-        "description": "Zest is a platform that helps you to find the best restaurants in your area. Let's get started!",
-        "next": "Next",
-        "skip": "Skip"
+        "slides": {
+            "1": {
+                "title": "Bienvenido a Zest",
+                "description": "Zest es una app que te mantiene motivado con recordatorios diarios."
+            },
+            "2": {
+                "title": "Logra",
+                "description": "Focaliza tus metas y empieza."
+            },
+            "3": {
+                "title": "Progresa",
+                "description": "Sigue tu progreso y celebra tus victorias."
+            },
+            "4": {
+                "title": "Crece",
+                "description": "Empieza el viaje para ser tu mejor versión."
+            }
+        },
+        "button": "¡Vamos!"
     },
     "Home": {
-        "title": "Inicio",
-        "searchPlaceholder": "Search for restaurants",
-        "noRestaurants": "No restaurants found"
+        "title": "Inicio"
+    },
+    "Reminder":{
+        "title": "Recordatorio"
+    },
+    "Profile": {
+        "title": "Perfil"
     }
 }

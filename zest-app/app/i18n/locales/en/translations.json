@@ -2,20 +2,20 @@
     "Onboarding": {
         "slides": {
             "1": {
-                "title": "Zest",
-                "description": "Zest is a mobile app that helps you find the best recipes for your ingredients."
+                "title": "Welcome to Zest",
+                "description": "Zest is a mobile app that keeps you motivated with daily reminders."
             },
             "2": {
-                "title": "Search",
-                "description": "Search for recipes by ingredients, cuisine, or diet."
+                "title": "Achieve",
+                "description": "Get clear on your goals and take action."
             },
             "3": {
-                "title": "Cook",
-                "description": "Cook delicious meals with step-by-step instructions."
+                "title": "Progress",
+                "description": "Track your progress and celebrate your wins."
             },
             "4": {
-                "title": "Save",
-                "description": "Save your favorite recipes to cook them later."
+                "title": "Grow",
+                "description": "Start the journey to become your best self."
             }
         },
         "button": "Zest Up!"

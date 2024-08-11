@@ -26,10 +26,8 @@ const yellowZest = '#fafa04';
 const darkGray = '#303030';
 const lightGray = '#cccc';
 const white = '#fff';
-const black = '#101010';
+const black = '#1e1e1e';
 
-const tintColorLight = '#2f95dc';
-const tintColorDark = '#fff';
 
 //TODO: ALT colors and alt styles
 //TODO: Separate the styles into different const for each component e.g. buttonStyles, textStyles, etc.
@@ -60,12 +58,13 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     titleOnBoarding: {
-        fontSize: 28,
+        fontSize: 36,
         fontWeight: '800',
         marginBottom: 10,
         textAlign: 'center',
     },
     descriptionOnBoarding: {
+        fontSize: 15,
         fontWeight: '300',
         textAlign: 'center',
         paddingHorizontal: 64,
