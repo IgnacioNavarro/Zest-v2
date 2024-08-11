@@ -7,6 +7,7 @@ import { OnboardingItem } from "./OnboardingItem";
 import { Paginator } from "./Paginator";
 import { router } from "expo-router";
 import { styles } from "@/constants/Styles";
+import { useTranslation } from "react-i18next";
 
 export const Onboarding = () => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
@@ -36,8 +37,10 @@ export const Onboarding = () => {
             <View style={{ flex: 3 }}>
             <FlatList
                 data={slides}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => <OnboardingItem item={item} />}
+                keyExtractor={(item) => 
+                    item.id}
+                renderItem={({ item }) => 
+                <OnboardingItem item={item} />}
             horizontal
             showsHorizontalScrollIndicator={false}
             pagingEnabled
@@ -65,11 +68,13 @@ export const Onboarding = () => {
 
 export const StartButton = ({scrollTo}:any) => {
     
+    const { t } = useTranslation();
+
     return (
         <TouchableOpacity onPress={scrollTo}
         style={styles.button}>
             <Text style={styles.startButtonText}
-            >Zest Up!</Text>
+            >{t(`Onboarding.button`)}</Text>
         </TouchableOpacity>
     )
 }

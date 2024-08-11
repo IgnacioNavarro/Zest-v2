@@ -5,6 +5,8 @@ import { useColorScheme } from 'react-native';
 import { useFonts } from 'expo-font';
 import { FontAwesome } from '@expo/vector-icons';
 
+
+
 export {
     // Catch any errors thrown by the Layout component.
     ErrorBoundary,

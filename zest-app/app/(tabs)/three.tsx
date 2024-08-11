@@ -10,8 +10,8 @@ export default function TabThreeScreen() {
         <Text style={styles.title}>Log in with mail</Text>
         <Text style={styles.title}>Create account</Text>
         <Text style={styles.title}>Forgot password</Text>
-        <Text style={styles.title}>Log out button in a corner</Text>
         <Text style={styles.title}>Profile screen</Text>
+        <Text style={styles.title}>Settings screen (logout, change Language)</Text>
     </View>
   );
 }

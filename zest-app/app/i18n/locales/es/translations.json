@@ -1,0 +1,13 @@
+{
+    "Onboarding": {
+        "title": "Bienvenido a Zest",
+        "description": "Zest is a platform that helps you to find the best restaurants in your area. Let's get started!",
+        "next": "Next",
+        "skip": "Skip"
+    },
+    "Home": {
+        "title": "Inicio",
+        "searchPlaceholder": "Search for restaurants",
+        "noRestaurants": "No restaurants found"
+    }
+}

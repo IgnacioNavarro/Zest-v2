@@ -4,9 +4,7 @@ import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { HomeScreen } from 'components/HomeScreen';
 import { Onboarding } from 'components/Onboarding/Onboarding';
-import TabLayout from './(tabs)/_layout';
 import { Link, Navigator, router, Stack } from 'expo-router';
-import RootLayout from './_layout';
 import { styles } from 'constants/Styles';
 
 const Loading = () => {
