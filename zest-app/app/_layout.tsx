@@ -6,20 +6,18 @@ import { useFonts } from 'expo-font';
 import { FontAwesome } from '@expo/vector-icons';
 
 
-
 export {
     // Catch any errors thrown by the Layout component.
     ErrorBoundary,
   } from 'expo-router';
   
-  export const unstable_settings = {
-    // Ensure that reloading on `/modal` keeps a back button present.
-    initialRouteName: '(tabs)/index',
-  };
+export const unstable_settings = {
+  // Ensure that reloading on `/modal` keeps a back button present.
+  initialRouteName: 'index',
+};
   
-  // Prevent the splash screen from auto-hiding before asset loading is complete.
-  SplashScreen.preventAutoHideAsync();
-
+// Prevent the splash screen from auto-hiding before asset loading is complete.
+SplashScreen.preventAutoHideAsync();
 
 
 export default function RootLayout() {
@@ -52,10 +50,10 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack screenOptions={{headerShown: false}}>
+      <Stack screenOptions={{headerShown: true}} >
+
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ title: 'Modal' }} />
-        <Stack.Screen name="Onboarding" options={{ headerShown: false }} />
         <Stack.Screen name="index" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
