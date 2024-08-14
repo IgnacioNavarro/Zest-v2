@@ -20,9 +20,7 @@ export async function fetchNotification(document:string) {
     const docRef =  
     doc(db, 'Notifications', document);
     const docSnap = await getDoc(docRef);
-    
     const res: ZestDbNotification = docSnap.data() as ZestDbNotification;
-    readJsonFile();
     return res;
 }
 

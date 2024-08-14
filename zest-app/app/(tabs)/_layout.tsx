@@ -6,6 +6,7 @@ import { useClientOnlyValue } from 'components/Expo-Components/useClientOnlyValu
 import Colors from 'constants/Colors';
 import { useTranslation } from "react-i18next";
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import { ScreenHeader } from '@/components/Expo-Components/Header';
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
@@ -24,15 +25,15 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
-        //headerShown: useClientOnlyValue(false, false)
+        headerShown: useClientOnlyValue(false, false)
         //TODO: Do i want a header????
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: t('Home.title'),
+          title: 'Reminder',
           headerShown: useClientOnlyValue(false, false),
-          tabBarIcon: ({ color }) => <FontAwesome6 name="house" size={24} color={color} style={{ marginBottom: -3 }} />,
+          tabBarIcon: ({ color }) => <FontAwesome6 name="bell" size={24} solid color={color} style={{ marginBottom: -3 }}  />,
           headerRight: () => (
             <Link replace href="/modal" asChild>
               <Pressable>
@@ -49,13 +50,15 @@ export default function TabLayout() {
           ),
         }}
       />
+
       <Tabs.Screen
         name="two"
         options={{
-          title: 'Reminder',
-          tabBarIcon: ({ color }) => <FontAwesome6 name="bell" size={24} solid color={color} style={{ marginBottom: -3 }}  />,
-        }}
+          title: t('Habits.title'),
+          tabBarIcon: ({ color }) => <FontAwesome6 name="list-check" size={24} color={color} style={{ marginBottom: -3 }} />,
+}}
       />
+
       <Tabs.Screen
         name="three"
         options={{

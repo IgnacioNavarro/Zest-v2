@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Zest",
-    "slug": "Zest",
+    "slug": "zest",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/app/icon.png",
@@ -48,6 +48,12 @@
     },
     "web": {
       "favicon": "./assets/images/app/assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4b15e43e-4f48-4911-9abf-890087bef5e2"
+      }
+    },
+    "owner": "ikk1"
   }
 }
