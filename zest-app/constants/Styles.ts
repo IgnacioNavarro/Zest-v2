@@ -24,9 +24,10 @@ const yellowZest = '#fafa04';
 */
 
 const darkGray = '#303030';
-const lightGray = '#cccc';
+const lightGray = '#f5f5f0';
 const white = '#fff';
-const black = '#1e1e1e';
+const black = '#181811';
+const darkYellow = '#3a3a27';
 
 
 //TODO: ALT colors and alt styles
@@ -46,14 +47,14 @@ export const styles = StyleSheet.create({
     },
     button: {
         position: 'absolute',
-        backgroundColor: colorSchemeDark ? yellowZest: darkGray,
+        backgroundColor: colorSchemeDark ? yellowZest: yellowZest,
         borderRadius: 20,
-        color: yellowZest,
+        color: black,
         bottom: 100,
         padding: 20
     },
     startButtonText: {
-        color: colorSchemeDark ? darkGray : yellowZest,
+        color: black,
         fontSize: 18,
         fontWeight: 'bold'
     },
@@ -93,7 +94,7 @@ export const styles = StyleSheet.create({
         marginVertical: 10,
         height: 1,
         width: '100%',
-        backgroundColor: colorSchemeDark ? lightGray : lightGray,
+        backgroundColor: colorSchemeDark ? darkYellow : lightGray,
     },
     title: {
         fontSize: 20,
@@ -101,7 +102,6 @@ export const styles = StyleSheet.create({
       },
     header: {
         flexDirection: 'row',
-        marginBottom: 20,
         backgroundColor: colorSchemeDark ? black : white,
         padding: 20,
         paddingTop: 30,
@@ -127,7 +127,7 @@ export const styles = StyleSheet.create({
         borderRadius: 50,
     },
     habitItem: {
-        backgroundColor: colorSchemeDark ? darkGray : white,
+        backgroundColor: colorSchemeDark ? black : white,
         padding: 16,
         borderRadius: 10,
       },
@@ -166,7 +166,7 @@ export const styles = StyleSheet.create({
         marginTop: 10,
       },
       dayButton: {
-        backgroundColor: '#E5E5E5',
+        backgroundColor: colorSchemeDark ?  darkYellow : lightGray,
         borderRadius: 5,
         paddingVertical: 5,
         paddingHorizontal: 10,
@@ -175,7 +175,7 @@ export const styles = StyleSheet.create({
       },
       dayText: {
         fontSize: 14,
-        color: black,
+        color: colorSchemeDark ? white : black,
         fontWeight: '400'
       },
       list: {
@@ -196,6 +196,46 @@ export const styles = StyleSheet.create({
         shadowOpacity: 0.2,
         shadowRadius: 5,
         elevation: 4,
+        color: colorSchemeDark ? white : black,
+      },
+      reminderExplanation: {
+        //this should be at the top of the screen
+        flex: 1,
+        alignItems: 'flex-start',
+        padding: 20,
+      },
+      reminderTitle: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        color: colorSchemeDark ? white : black,
+      },
+      reminderDescription: {
+        fontSize: 15,
+        fontWeight: '300',
+        color: colorSchemeDark ? white : black,
+        paddingVertical: 10,
+      },
+      reminderButton: {
+        backgroundColor: yellowZest,
+        color: black,
+        padding: 15,
+        borderRadius: 20,
+        width: '100%',
+        alignItems: 'center',
+
+      },
+      reminderButtonText: {
+        color: black,
+        fontSize: 18,
+        fontWeight: 'bold',
+        alignItems: 'center',
+      },
+      input: {
+        backgroundColor: colorSchemeDark ? darkYellow : lightGray,
+        padding: 20,
+        borderRadius: 20,
+        width: '100%',
+        marginBottom: 20,
         color: colorSchemeDark ? white : black,
       },
 
