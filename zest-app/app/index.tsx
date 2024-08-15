@@ -4,8 +4,9 @@ import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { HomeScreen } from 'components/HomeScreen';
 import { Onboarding } from 'components/Onboarding/Onboarding';
-import { Link, Navigator, router, SplashScreen, Stack } from 'expo-router';
+import { Link, Navigator, router, Stack } from 'expo-router';
 import { styles } from 'constants/Styles';
+import * as SplashScreen from 'expo-splash-screen';
 
 const Loading = () => {
   return (

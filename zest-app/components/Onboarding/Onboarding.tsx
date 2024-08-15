@@ -5,10 +5,10 @@ import {Text, View} from '@/components/Expo-Components/Themed';
 import { slides } from "assets/utils/slides";
 import { OnboardingItem } from "./OnboardingItem";
 import { Paginator } from "./Paginator";
-import { router, SplashScreen } from "expo-router";
+import { router } from "expo-router";
 import { styles } from "@/constants/Styles";
 import { useTranslation } from "react-i18next";
-
+import * as SplashScreen from 'expo-splash-screen';
 
 SplashScreen.preventAutoHideAsync();
 

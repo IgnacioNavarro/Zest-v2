@@ -1,5 +1,6 @@
 {
   "expo": {
+    "jsEngine": "hermes",
     "name": "Zest",
     "slug": "zest",
     "version": "1.0.0",

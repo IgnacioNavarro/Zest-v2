@@ -1,10 +1,10 @@
-import { SplashScreen, Stack } from 'expo-router';
+import { Stack } from 'expo-router';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import React, { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 import { useFonts } from 'expo-font';
 import { FontAwesome } from '@expo/vector-icons';
-
+import * as SplashScreen from 'expo-splash-screen';
 
 export {
     // Catch any errors thrown by the Layout component.
