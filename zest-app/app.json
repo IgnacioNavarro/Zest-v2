@@ -46,6 +46,9 @@
         "projectId": "4b15e43e-4f48-4911-9abf-890087bef5e2"
       }
     },
-    "owner": "ikk1"
+    "owner": "ikk1",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
