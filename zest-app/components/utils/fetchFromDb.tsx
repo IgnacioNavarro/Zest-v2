@@ -25,7 +25,7 @@ export async function fetchNotification(document:string) {
 }
 
 //use it to write data. Update the rules first and the numbers for the ids
-export async function readJsonFile() {
+/*export async function readJsonFile() {
     const sample = data;
     for (let i = 2; i < 38; i++) {
         const docRef = doc(db, 'Notifications', i.toString());
@@ -33,4 +33,4 @@ export async function readJsonFile() {
         console.log('Document written with ID: ', i);
     }
     return sample;
-}
+}*/

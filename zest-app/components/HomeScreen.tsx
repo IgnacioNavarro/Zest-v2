@@ -48,7 +48,7 @@ export const HomeScreen = () => {
         }
     ]
 
-    const renderItem = ({ item }) => {
+    const renderItem = ({ item }: {item:any}) => {
         return (
         <View>
         <View style={styles.habitItem}>
@@ -62,7 +62,7 @@ export const HomeScreen = () => {
             <Text style={styles.progressLabel}>Progress</Text>
             <ProgressBar progress={item.progress} /> 
             <View style={styles.daysContainer}>
-                    {item.days.map((day, index) => (
+                    {item.days.map((day:string, index:any) => (
                     <View key={index} style={styles.dayButton}>
                         <Text style={styles.dayText}>{day}</Text>
                     </View>
@@ -90,7 +90,7 @@ export const HomeScreen = () => {
                 <FlatList
                     data={habits}
                     renderItem={renderItem}
-                    keyExtractor={(item) => item.id}
+                    keyExtractor={(item) => item.id.toString()}
                     contentContainerStyle={styles.list}
                 />
                 <TouchableOpacity style={styles.fab} onPress={addHabit}>

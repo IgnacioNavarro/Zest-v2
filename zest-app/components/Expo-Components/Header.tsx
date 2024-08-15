@@ -2,7 +2,7 @@ import { styles } from "@/constants/Styles";
 import { View, Text } from "./Themed";
 import { Image, TouchableOpacity } from 'react-native';
 import { router } from "expo-router";
-export const ScreenHeader = ({ title }) => {
+export const ScreenHeader = ({ title } :{title: string}) => {
     
     const gotoProfile = () => {
         router.push('/three');
