@@ -198,6 +198,11 @@ export const styles = StyleSheet.create({
         elevation: 4,
         color: colorSchemeDark ? white : black,
       },
+      fabText:{
+        color: colorSchemeDark ? black : white,
+        fontSize: 18,
+        fontWeight: 'bold'
+      },
       reminderExplanation: {
         //this should be at the top of the screen
         flex: 1,
@@ -222,7 +227,7 @@ export const styles = StyleSheet.create({
         borderRadius: 20,
         width: '100%',
         alignItems: 'center',
-
+        marginBottom: 20,
       },
       reminderButtonText: {
         color: black,

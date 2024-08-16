@@ -23,6 +23,7 @@
       "bundleIdentifier": "com.zest"
     },
     "android": {
+      "googleServicesFile": "./android/app/google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/app/icon.png",
         "backgroundColor": "#202020"

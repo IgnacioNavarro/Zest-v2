@@ -2,6 +2,7 @@ import { styles } from '@/constants/Styles';
 import {Text, View} from '@/components/Expo-Components/Themed';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
 import { ScreenHeader } from '@/components/Expo-Components/Header';
+import { usePushNotifications } from '@/components/utils/push/usePushNotifications';
 export default function TabThreeScreen() {
 
 
@@ -19,13 +20,25 @@ export default function TabThreeScreen() {
         <Text style={styles.title}>Settings screen (logout, change Language)</Text>
 
         */
+
+
+
+  const {expoPushToken, notification} = usePushNotifications();
+
+  const data = JSON.stringify(notification, undefined, 2);
+
+
+  //todo: fetch form db and build notification
+  //todo: build ios EAS 
+
   return (
     <View style={styles.parentContainer}>
     <ScreenHeader title="Profile" />
     <View style={styles.container}>
 
       <Text style={styles.descriptionOnBoarding}>Coming soon...</Text>
-
+      <Text>Token: {expoPushToken?.data ?? ""}</Text>
+      <Text>Notification: {data}</Text>
     </View>
   </View>
   );

@@ -5,35 +5,17 @@ import { router } from 'expo-router';
 import { Platform, TextInput, TouchableOpacity } from 'react-native';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/components/firebase/firebase';
-import { fetchNotification } from '@/components/utils/fetchFromDb';
+import { fetchNotification } from '@/components/utils/db/fetchFromDb';
 import { ScreenHeader } from '@/components/Expo-Components/Header';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useState } from 'react';
+import { usePushNotifications } from '@/components/utils/push/usePushNotifications';
 
 
 
 export default function TabTwoScreen() {
 
-  const goToReminder = async () => {
-    console.log('Go to reminder');
-    const noti = await fetchNotification('1');
-    console.log('Notification: ', noti);
-    console.log(router.canGoBack());
-    router.back();
-  }
-
-
-  const clearOnboarding = async () => {
-    try {
-        await AsyncStorage.removeItem('@viewedOnboarding');
-    } catch (error) {
-        console.log('Error @clearOnboarding: ', error);
-    }
-  }
-
   const [objective, setObjective] = useState('');
-    
-  //set time as a async storage item
 
   const saveObjective = async () => {
     console.log('Saving objective');
@@ -44,19 +26,84 @@ export default function TabTwoScreen() {
     }
   }
 
-
+  const delay = () => new Promise(res => setTimeout(res, 100))
   const [time, setTime] = useState(new Date());
+
+  const saveTime = async () => {
+    const hours = time.getHours().toString()+":" + time.getMinutes().toString();
+    console.log("Saving time: " + hours);
+    try{
+      await AsyncStorage.setItem('notificationTime', hours);
+    } catch (error) {
+      console.log('Error @saveTime: ', error);
+    }
+  }
+
   const [showPicker, setShowPicker] = useState(false);
+  const [editable, setEditable] = useState(true);
 
-  const onChange = (event:any, selectedTime: any) => {
+  const onChange =  async (event:any, selectedTime: any) => {
     const currentTime = selectedTime || time;
-    setShowPicker(Platform.OS === 'android');
+    //setShowPicker(Platform.OS === 'android');
     setTime(currentTime);
+    setEditable(false);
+    setShowPicker(false);
+    await delay();
+    setEditable(true);
   };
 
-  const showTimepicker = () => {
-    setShowPicker(true);
-  };
+
+  const DateInput = () => {
+
+    const os = Platform.OS;
+
+    if(os === 'ios'){
+      return(
+        <DateTimePicker
+          style={
+            {
+              width: '100%',
+              height: '30%'
+            }
+          }
+          value={time}
+          mode="time"
+          display="spinner"
+          onChange={onChange}
+        />
+      )
+    } else{
+      return(
+        <View style={{
+          width: '100%'
+        }}>
+
+        <TextInput
+        id='androidInput'
+        style={styles.input}
+        placeholder="08:00 AM"
+        placeholderTextColor="#808080" // Color gris para el placeholder
+        value={time.getHours().toString()+":" + time.getMinutes().toString()}
+        onPress={ () => 
+          {
+            setShowPicker(true);
+          }}
+        editable={editable}
+        />
+
+        {showPicker && (
+          <DateTimePicker
+          value={time}
+          mode="time"
+          display="spinner"
+          onChange={onChange}
+          is24Hour={true}
+        />)}
+        </View>
+      )
+    }
+  }
+
 
   return (
     <View style={styles.parentContainer}>
@@ -74,25 +121,12 @@ export default function TabTwoScreen() {
         <TouchableOpacity style={styles.reminderButton} onPress={saveObjective}>
           <Text style={styles.reminderButtonText}>Save</Text>
         </TouchableOpacity>
-    </View>
-    <View style={styles.reminderExplanation}>
         <Text style={styles.reminderTitle}>Set the notification time ⏳</Text>
         <Text style={styles.reminderDescription}>Receive the notification when needed.</Text>
-        { showPicker && (
-          <DateTimePicker
-          value={time}
-          mode="time"
-          display="default"
-          onChange={onChange}
-        />)}
-        <TouchableOpacity style={styles.reminderButton} onPress={showTimepicker}>
+        {DateInput()}
+        <TouchableOpacity style={styles.reminderButton} onPress={saveTime}>
           <Text style={styles.reminderButtonText}>Save</Text>
         </TouchableOpacity>
-    </View>
-    <View style={styles.container}>
-      <TouchableOpacity onPress={goToReminder}>
-        <Text>Go to reminder</Text>
-      </TouchableOpacity>
     </View>
   </View>
   );

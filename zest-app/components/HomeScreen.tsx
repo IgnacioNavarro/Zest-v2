@@ -78,6 +78,8 @@ export const HomeScreen = () => {
         console.log('Add habit');
         //pop up saying coming soon
 
+        clearOnboarding();
+
         Alert.alert('Zest', 'This feature is coming soon');
 
     }
@@ -94,7 +96,7 @@ export const HomeScreen = () => {
                     contentContainerStyle={styles.list}
                 />
                 <TouchableOpacity style={styles.fab} onPress={addHabit}>
-                    <Text style={styles.startButtonText}>+</Text>
+                    <Text style={styles.fabText}>+</Text>
                 </TouchableOpacity>
             </View>
         </View>

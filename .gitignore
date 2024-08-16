@@ -1,3 +1,5 @@
 node_modules
 
 zest-app/.env
+
+zest-app/android/
