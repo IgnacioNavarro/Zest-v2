@@ -2,7 +2,7 @@ import { styles } from '@/constants/Styles';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import {Text, View} from '@/components/Expo-Components/Themed';
 import { router } from 'expo-router';
-import { Platform, TextInput, TouchableOpacity } from 'react-native';
+import { Alert, Platform, TextInput, ToastAndroid, TouchableOpacity } from 'react-native';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/components/firebase/firebase';
 import { fetchNotification } from '@/components/utils/db/fetchFromDb';
@@ -21,19 +21,42 @@ export default function TabTwoScreen() {
     console.log('Saving objective');
     try {
       await AsyncStorage.setItem('objective', objective);
+      sendToast('Objective saved!');
     } catch (error) {
       console.log('Error @saveObjective: ', error);
     }
+  }
+
+  const sendToast = (msg:string) => {
+    if(Platform.OS === 'android'){
+      ToastAndroid.show(msg, ToastAndroid.SHORT);
+    } else{
+      Alert.alert(msg);
+    }
+  }
+
+  const displayHourAndroid = (hour: any, minute: any) => {
+    let displayHour = hour;
+    let displayMinute = minute;
+    if(minute < 10){
+      displayMinute = '0' + minute;
+    }
+    if(hour < 10){
+      displayHour = '0' + hour;
+    }
+
+    return displayHour + ':' + displayMinute;
   }
 
   const delay = () => new Promise(res => setTimeout(res, 100))
   const [time, setTime] = useState(new Date());
 
   const saveTime = async () => {
-    const hours = time.getHours().toString()+":" + time.getMinutes().toString();
+    const hours = displayHourAndroid(time.getHours(), time.getMinutes());
     console.log("Saving time: " + hours);
     try{
       await AsyncStorage.setItem('notificationTime', hours);
+      sendToast('Notification time saved!');
     } catch (error) {
       console.log('Error @saveTime: ', error);
     }
@@ -83,7 +106,7 @@ export default function TabTwoScreen() {
         style={styles.input}
         placeholder="08:00 AM"
         placeholderTextColor="#808080" // Color gris para el placeholder
-        value={time.getHours().toString()+":" + time.getMinutes().toString()}
+        value={displayHourAndroid(time.getHours(), time.getMinutes())}
         onPress={ () => 
           {
             setShowPicker(true);

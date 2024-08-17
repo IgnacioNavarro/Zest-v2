@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { View, Text, TouchableOpacity, FlatList, Image, Alert } from "react-native";
+import { View, Text, TouchableOpacity, FlatList, Image, Alert, Platform, ToastAndroid } from "react-native";
 import { styles } from "@/constants/Styles";
 import { router } from "expo-router";
 import { ScreenHeader } from "./Expo-Components/Header";
@@ -80,7 +80,11 @@ export const HomeScreen = () => {
 
         clearOnboarding();
 
-        Alert.alert('Zest', 'This feature is coming soon');
+        if(Platform.OS === 'android'){
+            ToastAndroid.show('This feature is coming soon', ToastAndroid.LONG);
+        } else{
+            Alert.alert('Zest', 'This feature is coming soon');
+        }
 
     }
 
