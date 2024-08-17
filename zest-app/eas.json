@@ -5,7 +5,10 @@
   "build": {
     "development": {
       "developmentClient": true,
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "GOOGLE_SERVICES_JSON": "process.env.GOOGLE_SERVICES_JSON"
+      }
     },
     "preview": {
       "distribution": "internal"

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "79097045876",
+    "project_id": "zest-v2",
+    "storage_bucket": "zest-v2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79097045876:android:3750836c2a888209d6c221",
+        "android_client_info": {
+          "package_name": "com.zest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDvPhPl5LlzQvQVbXdP1-IKHBkx_3Zo7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
